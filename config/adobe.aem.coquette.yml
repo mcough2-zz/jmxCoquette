@@ -1,0 +1,24 @@
+  # JMXCoquette Extension
+  # ------------------------------------------
+  # enabled: (true | false)
+  # mode: (options - strict, open, promiscuous, disco)
+  # frequency: (integer) value for harvest cycles in minutes
+  # event_name: (string) the name of the custom event in Insights
+  # mbean_n: (string) the mbean name and names of the attributes required
+  coquette:
+    enabled: true
+    mode: strict
+    frequency: 1
+    event_name: JMX
+    mbean_0: org.apache.sling:type=queues,name=AllQueues [AverageProcessingTime,AverageWaitingTime,NumberOfActiveJobs,NumberOfCancelledJobs,NumberOfFailedJobs,NumberOfFinishedJobs,NumberOfJobs,NumberOfProcessedJobs,NumberOfQueuedJobs]
+    mbean_1: org.apache.sling:type=engine,service=RequestProcessor [RequestsCount,MeanRequestDurationMsec,MeanServletCallCount,MaxServletCallCount]
+    mbean_2: org.apache.sling:type=servletResolver,service=SlingServletResolverCache [CacheSize,MaximumCacheSize]
+    mbean_3: java.lang:type=ClassLoading [LoadedClassCount,TotalLoadedClassCount,UnloadedClassCount]
+    mbean_4: java.lang:type=Threading [ThreadCount,PeakThreadCount,DaemonThreadCount]
+    mbean_5: java.lang:type=Compilation [TotalCompilationTime]
+    mbean_6: java.lang:type=Runtime [Uptime]
+    mbean_7: java.lang:type=GarbageCollector,name=ParNew [CollectionTime,CollectionCount]
+    mbean_8: java.lang:type=GarbageCollector,name=ConcurrentMarkSweep [CollectionCount,CollectionTime]
+    mbean_9: java.lang:type=GarbageCollector,name=MarkSweepCompact [CollectionCount,CollectionTime]
+    mbean_10: com.adobe.granite.replication:type=agent,id=* [Enabled,Id,QueueBlocked,QueueNumEntries,QueuePaused,Valid,QueueLastProcessTime,QueueNextRetryTime,QueueProcessingSince,QueueStatusTime]
+    mbean_11: org.apache.sling:type=threads,service=ThreadPool,name=* [ExecutorActiveCount,ExecutorTaskCount,ExecutorCompletedTaskCount]
